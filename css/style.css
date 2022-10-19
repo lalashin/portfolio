@@ -1,0 +1,959 @@
+
+
+/* 모바일용 CSS */
+/* 모바일 수평 스크롤 금지 */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+/* 기본 CSS */
+.container{
+    position:relative;
+    width:90%; max-width: 1132px; margin:0 auto;/*가로사이즈를 90%로 지정 최대 가로사이즈 1132px로 설정*/  
+}
+    
+    .cfixed:after, .container:after {
+    display:block; 
+    content:""; 
+    clear:both;/*플로트 속성으로 인해 발생하는 문제를 방지하기 위해 clear 속성값을 양쪽을 의미하는 both로 설정*/
+    }
+    
+    .blind{
+        position:absolute;
+        width:0;
+        height:0;
+        line-height:0;
+        text-indent:-9999px;
+        overflow:hidden;
+        }
+    
+    .sec-tit{
+        font-size: 42px;
+        color:#3f51b5;
+        font-weight:normal;
+    }/*제목영역 스타일*/
+    
+    .divider {
+        width:90%;
+        max-width:1132px;
+        margin:0 auto;
+        margin-top:77px;
+        background:#eee;
+    }/*구분선 설정*/
+    
+    .m-divider{
+        width:20px;
+        margin:0 auto;
+        margin-top:77px;
+        background:#3f51b5;
+    }
+    
+    
+    /*헤더영역 CSS*/
+    .header{ position:fixed; 
+        top:0;
+        left:0;
+        right: 0;
+        /*position:relative; 
+    메뉴 목록영역이 놓일 기준을 설정하기 위해 position 속성의 값을 relative로 설정하여 상대적인 위치로 만들어 줌*/
+    padding : 18px 5%; /*위아래 패딩 18px 좌우패딩값 15%*/
+    background: #fff;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.3);
+    z-index: 999;
+    }
+    
+    .header .logo{
+    float:left; /*로고 영역을 왼쪽으로 배치하기 위해 float 속성의 값을 left로 설정함.*/
+    }
+    
+    .header .logo a{ 
+    font-size:26px;
+    color:#3f51b5;
+    font-weight:normal;
+    }
+    
+    /*220913 추가 */
+    
+    .mNav { 
+        z-index: 2; 
+        position: fixed; 
+        background-color: #fff; 
+        top: 0; 
+        right: -100%; 
+        width: 80%; 
+        height: 100%; 
+        transition: all 0.3s ease; }
+
+    .mNav.on { 
+        right: 0; 
+    }
+
+    .bg-shadow { 
+        position: fixed; 
+        top: 0; 
+        right: 0; 
+        width: 100%; 
+        height: 100%; 
+        z-index: 1; 
+        background: rgba(0, 0, 0, 0.7); 
+        display: none; 
+        cursor: pointer; }
+    .closeBtn { 
+        position: absolute; 
+        top: 0; 
+        right: 0; 
+        display: block; }
+    .closeBtn a { 
+        display: block; 
+        text-indent: -9999px; 
+        width: 24px; 
+        height: 24px; 
+        background: url('../images/close.png') no-repeat; 
+        margin-top: 25px; 
+        margin-right: 20px; }
+    
+    /**/
+    
+    .header .gnb { 
+    position: relative; 
+    padding-top: 30px; 
+    }
+    /*.header .gnb{
+    display:none;
+    position:absolute; /*메뉴목록 영역을 해더 영역 밑으로 배치하기 위해 요소의 위치를 설정해 주는 속성인 position을 설정합니다. 속성값은 절대적인 위치로 만들어 주는 absolute로 설정합니다.
+    top:100%;
+    left:0;
+    width:100%;
+    background:#3f51b5;
+    }*/
+    
+    .header .gnb li{
+    border-bottom:1px solid #303f9f;
+    padding: 4px 0 4px 0 ;
+    }
+    
+    .header .gnb li a{
+    display: block;
+    padding:14px 0 14px 5%;
+    font-size: 14px;
+    color: #3f51b5;
+    }
+    
+    .header .menu-toggle-btn{
+    float:right; /*토글 버튼을 오른쪽으로 배치하기 위해 float 속성의 값을 right로 설정*/
+    width:20px;
+    margin-top:4px;
+    cursor:pointer;
+    }
+    .header .menu-toggle-btn span{
+    display:block;
+    width:100%;
+    height:2px;
+    background:#3f51b5;
+    }
+    
+    .header .menu-toggle-btn span:nth-child(2){
+    margin:5px 0;
+    }
+    
+    /*슬라이더 영역 css*/
+    .slider{
+        position: relative;
+        margin-top: 65px;
+        width:100%;
+        height: 550px;
+        color: #424242;
+        background: #fff;
+    }
+    .slider .m_copy {
+        padding: 50px 0 0 30px;
+        font-size: 24px;
+        line-height: 30px;
+        animation: maintxt_slide 2s ease-out;
+        
+    }
+
+    .slider .m_copy_btn {
+        padding-left: 30px;    
+        
+        animation: maintxt_slide 2s ease-out;
+    }
+    .slider a {
+        padding: 7px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #3f51b5;      
+        text-decoration: underline;       
+    }
+
+   
+
+    @keyframes maintxt_slide {
+        from{
+            padding-left: 0;
+            opacity: 0;
+        }
+        to{
+            padding-left: 30px;
+            opacity: 1;
+        }
+        
+    }
+
+
+
+    .slider div{
+        position: absolute;
+        bottom: -30px;
+        right: -70px;
+        animation: mainimg_slide 2s ease-out;
+    }
+
+    @keyframes mainimg_slide {
+        from{
+            bottom: -50px;
+            opacity: 0;
+        }
+        to{
+            bottom: -30px;
+            opacity: 1;
+        }
+        
+    }
+
+   
+     
+    /*디스플레이 영역 CSS*/
+
+    .display-section{
+    padding: 70px 0 70px 0;
+    text-align:center;
+    background: #f2f2f2;
+    
+    }
+
+    .display-section .about_area {
+        margin-left: 0px;
+        width: 100%;       
+        animation: about_area_slide 2s ease-out;
+    }
+    
+    @keyframes about_area_slide {
+        from{
+            margin-left: -30px;
+            opacity: 0;
+        }
+        to{
+            margin-left: 0px;
+            o
+            pacity: 1;
+        }
+        
+    }
+
+    .display-section .sec-tit{
+    margin-bottom:30px;
+  
+    }
+    
+    .display-section .desc{
+    font-family;'PT serif';
+    color:#616161;
+    line-height:1.9;
+    }
+
+   
+    
+    /*프로모션 영역 CSS*/
+    .promotion-section{
+    margin-top:68px; /*위쪽 마진값을 68px로 설정합니다.*/
+    }
+    
+    .promotion-section .promo-list li{
+    margin-top:52px;/*위쪽마진을 52px로 설정하고 글자를 중앙으로 설정합니다.*/
+    text-align:center;
+    }
+    
+    .promotion-section .promo-list li:first-child{
+    margin-top:0; /*프로모션 목록 중 첫번째 목록은 위쪽 마진값이 필요 없으므로 0으로 설정합니다.*/
+    }
+    
+    .promotion-section .promo-list li img{
+    height:52px; /*프로모션 목록 영역의 이미지의 높잇값을 52px로 설정합니다.*/
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+    }
+
+    .promotion-section .promo-list li img:hover{
+    transform: scale(1.1);
+    }
+    
+    .promotion-section .promo-list li h3{
+    margin:29px 0 20px 0; /*마진 값을 위/아래 29px/20px로 설정합니다.*/
+    color:#3f51b5;
+    font-weight:normal;   
+    }
+
+    .promotion-section .promo-list li h3:hover{
+    font-weight:700;
+    }
+
+   
+    .promotion-section .promo-list li p{
+    font-size:14px; /*글자 크기 설정, 글자 종류와 글자 색상 그리고 행간을 설정*/
+    font-family:'PT Serif';
+    color:#616161;
+    line-height:1.5;
+    }
+    
+    /*최근작업영억 CSS*/
+    
+    .work-section{
+    margin-top:73px;
+    }
+    
+    .work-section .sec-tit{
+    width:90%;
+    max-width:1132px;
+    margin:0 auto;
+    margin-bottom:47px;
+    text-align:center;
+    }
+    
+    .work-section .work-list li{
+    width:100%;
+    }
+    
+    .work-section .work-list li a{
+    display:block;
+    position:relative; /*배경과 글자들이 위치할 기준을 설정하기위해서 relative로 설정*/
+    width:100%;
+    height:100%;
+    }
+    
+    .work-section .work-list li a:before{
+    display:block; /*절대 위치 값을 설정*/
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+    width:100%;
+    height:100%;
+    background:#3f51b5;
+    content:"";
+    opacity:0;
+    transition:all 0.2s; /*최근 작업 목록 영역에 마우스를 롤오버할 때 변화 속성을 주기 위한 설정*/
+    }
+    
+    .work-section .work-list li a:hover:before{
+    opacity:0.86;
+    }
+    
+    .work-section .work-list li .info{
+        position:absolute;
+        top:0;
+        left:23px;
+        z-index:20;
+        opacity:0;
+        transition:all 0.3s;
+        }
+            
+        .work-section .work-list li a:hover .info{
+        transform:translateY(23px);
+        opacity:1;
+        }
+            
+        .work-section .work-list li .info h3{
+        margin-bottom:8px;
+        font-size:23px;
+        color:#fff;
+        font-weight:normal;
+        }
+            
+        .work-section .work-list li .info span{
+        font-size:11px;
+        color:#fff;
+        }
+            
+        .work-section .work-list li img{
+        display:block;
+        width:100%;
+        max-width:100%;
+        height:auto;
+        }   
+    
+   /* 최근 글 영역 CSS */
+.blog-section{
+    margin-top:77px;
+    padding: 70px 20px 70px 20px;
+   /* background: #303f9f;*/
+   background: url('../images/p-images/ability-bg.jpg') fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+    }
+        
+    .ability_area{
+     
+    }
+
+    .blog-section .sec-tit{
+    margin-bottom:47px;
+    text-align:center;
+    }
+        
+    .blog-section .blog-list li{
+    width:100%;
+    margin-top:45px;
+    }
+       
+    
+    .blog-section .blog-list li:first-child{
+    margin-top:0;
+    }
+    
+    .blog-section .blog-list li h4 {
+        margin-bottom:18px; 
+    }
+
+    .blog-section .blog-list li img{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    }
+        
+    .blog-section .blog-list li time{
+    display:block;
+    margin:5px 0 10px 15px;
+    font-size:11px;
+    color:#9e9e9e;
+    }
+        
+    .blog-section .blog-list li h3{
+        margin-left: 15px;
+    color:#424242;
+    font-weight:normal;
+    line-height:1.6;
+    }    
+    
+    /*연락처 영역 CSS*/
+    
+    .contact-section{
+    margin-top:109px;
+    }
+    
+    .contact-section .sec-tit{
+    margin-bottom:47px;
+    text-align:center;
+    }
+    
+    .contact-section .sec-tit{
+    margin-bottom:47px;
+    text-align:center;
+    }
+    
+    .contact-section .form-box .form input {
+    padding-bottom:13px;
+    margin-bottom:38px;
+    }
+    
+    .contact-section .form-box .textarea textarea {
+    height:165px;
+    }
+    
+    .contact-section .form-box .send-btn{
+    margin-top:36px;
+    text-align:right;
+    }
+    
+    .contact-section .form-box .send-btn button {
+    padding:15px;
+    margin:0;
+    border:0;
+    font-size:12px;
+    color:#fff;
+    background:#3f5ab5;
+    font-family: 'Montserrat';
+    cursor:pointer;
+    }
+    
+    /*푸터 영영 CSS*/
+    
+    .footer{    
+    position: relative;
+    margin-top:104px;
+    background-image: url('../images/p-images/c_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
+    
+    .footer div{
+    padding-top: 120px;
+    width:100%;
+    height:200px;
+    color:#fff;
+    text-align: center;   
+    }    
+
+    .footer a{
+    padding: 5px 15px;
+    border: 1px solid #fff ;
+    border-radius: 20px;
+    color: #fff;
+    }
+    
+    .footer p{
+    position: absolute;
+    left:50%; transform:translateX(-50%);
+    font-size: 12px;    
+    text-align:center;
+    bottom: 10px;
+    }
+    
+   
+/* 탑버튼 */
+#backtotop{
+    background-color: #333;
+    font-size: 1em;  color:#fff;
+    /* 가운데정렬을위한 lineheight */
+    line-height: 50px;
+    text-align: center;
+    width:50px;
+    height:50px;
+    /* 원만들기 */
+    border-radius: 40px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition-property: background-color, opacity, visibility;
+    transition-duration: 0.3s, 0.5s, 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+   }
+   
+   /* top icon 스크롤 옵션 */ 
+   #backtotop:after{
+     line-height: 40px;
+     }
+   
+   #backtotop.show{
+     opacity:1;
+     visibility:visible;
+   }
+   
+   #backtotop.show:hover{
+     cursor:pointer;
+     background-color: #4578ff;
+   }
+
+   
+
+    /* 태블릿용 CSS */
+    @media all and (min-width:768px){
+    
+    /*기본 CSS*/
+    .divider {
+        margin-top:124px;       
+    }
+    
+    .m-divider {
+        margin-top:124px;       
+    }
+    
+    
+    /*헤더영역 CSS*/
+    .header{
+        position:fixed; 
+        top:0;
+        left:0;
+        right: 0;
+    
+    /*헤더 영역은 더이상 상대적인 위치로 작동할 필요가 없기때문에
+     position 속성의 값을 기본값인 static으로 설정 */
+     padding : 24px 52px;
+    margin: 0;
+    background: #fff;
+    }
+    
+
+  /*220913 추가 */
+    
+.mNav { 
+    z-index: 3; 
+    position:static; 
+    background-color: none; 
+    float: right;
+    top: 0; 
+    left:0;
+    margin-top: 5px;
+    width: 80%;      
+     }
+
+.bg-shadow {    
+    display: none; 
+}
+
+.closeBtn {    
+    display: none; 
+}
+
+
+/**/
+
+    .header .gnb{
+    display: block !important;
+    position:static; /*메뉴 목록 영역은 더 이상 절대적인 위치로 작동할 필요가 없으므로 position 속성의 값을 기본값인 static으로 설정*/
+    float:right; /*float 속성의 값을 right로 설정*/
+    width:auto;
+    margin-top:0;
+    padding: 0;
+    }
+    
+    .header .gnb li{
+    float:left; /*float 속성의 값을 left로 설정하여 가로로 배치*/
+    margin-left:21px;  
+    border-bottom:0;
+    }
+    
+    .header .gnb li a {
+    padding:0;
+    font-size:16px;
+    color:#3f51b5;    
+    }
+    
+    .header .menu-toggle-btn {
+    display:none !important;
+    }
+    
+    /*슬라이더영역 CSS*/
+    .slider{
+    height: 450px;      
+    }
+
+    .slider .m_copy {
+        padding: 100px 0 0 60px;
+        font-size: 28px;
+        line-height: 36px;
+        animation: maintxt_slide 2s ease-out;
+    }
+
+    .slider .m_copy_btn {
+        padding-left: 60px;
+        animation: maintxt_slide 2s ease-out;
+    }
+
+    @keyframes maintxt_slide {
+        from{
+            padding-left: 0;
+            opacity: 0;
+        }
+        to{
+            padding-left: 60px;
+            opacity: 1;
+        }
+        
+    }
+
+    .slider a {
+
+        font-size: 16px;
+              
+    }
+    .slider div{
+        position: absolute;
+        bottom: -70px;
+        right: -10px;
+        animation: mainimg_slide 2s ease-out ;
+    }
+
+    @keyframes mainimg_slide {
+        from{
+            bottom: -90px;
+            opacity: 0;
+        }
+        to{
+            bottom: -70px;
+            opacity: 1;
+        }
+        
+    }
+
+    /*디스플레이영역 CSS*/
+    
+    .display-section{
+        padding: 95px 0 95px 0;
+    }
+    
+   
+    
+    /*프로모션 영역 CSS*/
+    
+    .promotion-section{
+    margin-top:110px;
+    }
+    
+    .promotion-section .promo-list li{
+    float:left;
+    width:23.046875%; /* 가변그리드 공식을 이용한 너빗값*/
+    /*177px ÷ 768px*/
+    margin-left:2.604166666666667%;
+    /*20px ÷ 768px*/
+    margin-top:0;
+    }
+    
+    .promotion-section .promo-list li:first-child{
+    margin-left:0;
+    }
+    
+    /*최근작업영역 CSS*/
+    .work-section {
+    margin-top:118px;
+    }
+    
+    .work-section .sec-tit {
+    margin-bottom:76px;
+    }
+    
+    .work-section .work-list li{
+    float:left; /*float의 속성 값을 왼쪽으로 배치하도록 설정*/
+    width:50%;
+    }
+    
+    .work-section .sork-list li .info{
+    left:37px;
+    }
+    
+    .work-section .work-list li a:hover .info{
+    transform:translateY(37px);
+    }
+    
+    /*최근글 영역 CSS*/
+    
+    .blog-section{
+    margin-top:124px;
+    }
+    
+    .blog-section .sec-tit{
+    margin-bottom:76px;
+    }
+    
+    .blog-section .blog-list li{
+    float:left;
+    width:31.59722222222223%;
+    /*242.6666666666667px ÷ 768px*/
+    margin-left:2.604166666666667%;
+    /*20px  ÷ 768px */
+    margin-top:0;
+    }
+    
+    .blog-section .blog-list li:first-child{
+    margin-left:0;
+    }
+    
+    /*연락처 영역 CSS*/
+    .contact-section{
+    margin-top:176px;
+    }
+    
+    .contact-section .sec-tit{
+    margin-bottom:76px;
+    }
+    
+    .contact-section .form-box .form, .contact-section .form-box .textarea {
+    float:left;
+    width:48.69791666666667%;
+    /*374px ÷ 768px*/
+    }
+    
+    .contact-section .form-box .form{
+    margin-right:2.604166666666667%;
+    /*20px ÷ 768px*/
+    }
+    
+    .contact-section .form-box .form input:last-child{
+    margin-bottom:0;
+    }
+    
+    /*푸터영역 CSS*/
+    
+    .footer div{
+    padding-top: 140px;
+    width:100%;
+    height:180px;
+    color:#fff;
+    font-size: 24px;
+    text-align: center;   
+    }    
+    
+    .footer a{
+    padding: 5px 15px;
+    border: 0px solid #fff ;
+    border-radius: 20px;
+    color: #fff;
+    }
+    
+    
+
+    
+    }
+    
+    /* PC용 CSS */
+    @media all and (min-width:1132px) {
+    
+    /*슬라이더영역 CSS*/
+    .slider{
+    height: 600px;      
+    }
+
+    .slider .m_copy {
+        padding: 170px 0 0 50px;
+        font-size: 36px;
+        line-height: 48px;
+        animation: maintxt_slide 2s ease-out;
+    }
+
+    .slider .m_copy_btn {
+        padding-left: 50px;
+        animation: maintxt_slide 2s ease-out;
+    }
+
+    @keyframes maintxt_slide {
+        from{
+            padding-left: 0;
+            opacity: 0;
+        }
+        to{
+            padding-left: 50px;
+            opacity: 1;
+        }
+        
+    }
+
+    .slider a {
+        padding: 5px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #3f51b5;
+        text-decoration: underline;
+       
+    }
+
+    .slider div{
+        position: absolute;
+        bottom: 120px;
+        right: 50px;
+        animation: mainimg_slide 2s ease-out;
+    }
+
+    @keyframes mainimg_slide {
+        from{
+            bottom: 90px;
+            opacity: 0;
+        }
+        to{
+            bottom: 120px;
+            opacity: 1;
+        }
+        
+    }
+
+    /*디스플레이영역 CSS*/
+    
+    .display-section{
+    text-align:left;
+    }
+    
+    .display-section .sec-tit {
+    float:left; /*float 속성의 값을 left로 설정합니다.*/
+    margin-bottom:0;/*PC에서 아래부분 마진 값이 필요없으므로 0으로 설정*/
+    }
+    
+   
+
+    .display-section .desc{
+    position : relative;/*선이 위치할 기준을 설정하기 위해 position속성의 값을 relative로 설정*/
+    float:right; /*디스플레이 영역의 문단 영역의 구조를 보면 오른쪽으로 배치되어 있는 것을 볼 수 있습니다. float 속성의 값을 right로 설정합니다.*/
+    padding-left:20px;
+    font-family:'PT Serif';
+    color:#616161;
+    line-height: 1.9;
+    }
+    
+    .display-section .desc:before{
+    display:block;
+    position:absolute;/*position 속성의 값을 요소를 절대적인 위치로 만드는 absolute로 설정*/
+    top:9px;
+    left:0;
+    width:2px;
+    height:44px;
+    background:#e0e0e0; 
+    content:"";
+    
+    }
+    
+    /*프로모션 영역 CSS*/
+    .promotion-section .promo-list li {
+    width:23.67491166077739%;
+    /*268px ÷ 1132px */
+    margin-left:1.76678445229682%;
+    /*20px ÷ 1132px */
+    }
+    
+    /*최근작업영역 CSS*/
+    .work-section .sec-tit{
+    text-align:left;
+    }
+    
+    .work-section .work-list li{
+    width:25%;
+    }
+    
+    /*최신글 영역 CSS*/
+    .blog-section .sec-tit{
+    float:left;
+    margin-bottom:0;
+    }
+    
+    .blog-section .blog-list{
+    float:right;
+    width:74.5583038869258%;
+    /*844px ÷ 1132px*/
+    }
+    
+    .blog-section .blog-list li{
+    width:31.75355450236967%;
+    /*268px ÷ 844px*/
+    margin-left:2.369668246445498%;
+    /*20px ÷ 844px*/
+    }
+    
+    /*연락처 영역 CSS*/
+    
+    .contact-section .sec-tit{
+    float:left;
+    margin-bottom:0;
+    }
+    
+    .contact-section .form-box{
+    float:right;
+    width:74.5583038869258%;
+    /*844px ÷ 1132px*/
+    }
+    
+    .contact-section .form-box .from, .contact-section .form-box .textarea{
+    width:48.81516587677725%;
+    /*412px ÷ 844px*/
+    }
+    
+    .contact-section .form-box .form{
+    margin-right:2.369668246445498%;
+    /*20px ÷ 844px*/
+    }
+    
+    
+    }
+    
+    
