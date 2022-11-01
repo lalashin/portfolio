@@ -138,6 +138,10 @@ html, body {
     font-size: 14px;
     color: #3f51b5;
     }
+
+    .header .gnb li a:hover{
+        font-weight: 600;
+    }
     
     .header .menu-toggle-btn{
     float:right; /*토글 버튼을 오른쪽으로 배치하기 위해 float 속성의 값을 right로 설정*/
